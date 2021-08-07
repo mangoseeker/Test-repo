@@ -9,6 +9,9 @@ urlpatterns = [
     path('home/', views.home, name="home"),
     path('bookinfo/', views.bookinfo, name="bookinfo"),
     path('about/', views.about, name="about"),
-    path("bookinfo/<int:Book_id>/", views.bookid, name="idofbook"),
-
+    path("bookinfo/<int:Book_id>/", views.bookinfo, name="bookinfo"),
+    path('delete/(?P<m>[0-9]+)/', views.book_delete, name='book_delete'),
+    path('create/', views.create, name="create"),
+    path('savecreate', views.create_book, name="create_book")
 ]
+# r'^delete/(?P<pk>[0-9]+)/$'

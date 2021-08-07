@@ -10,3 +10,6 @@ class Book(models.Model):
     year = models.DateTimeField('date of publishing')
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
 
+    def is_valid(self):
+        pass
+

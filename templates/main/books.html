@@ -3,6 +3,13 @@
 {% block content %}
 {% for book in books %}
     <a href="/bookinfo/{{ book.id }}">{{book.name}}</a>
+    <form action="{% url 'book_delete' book.id %}" method="POST">
+        {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Delete book</button>
+    </form>
+
 {% endfor %}
+<a class="btn btn-primary" href="/create/" role="button">Create new book</a>
+
 {% endblock %}
 {% block header %}{% endblock %}

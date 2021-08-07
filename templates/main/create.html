@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'main/base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+    <h1>What book do you want to add to list?</h1>
+<form action="{% url 'create_book' %}" method="POST">
+        {% csrf_token %}
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="" name="name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"></span>
+      </div>
+    </div>
+    <h1>What year this book was published?</h1>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="" name="year" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"></span>
+      </div>
+    </div>
+    <h1>Author of this book</h1>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="" name="aftername" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"></span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secondary">Create book</button>
+</form>
+{% endblock %}
+{% block header %}
+{% endblock %}
+</body>
+</html>
