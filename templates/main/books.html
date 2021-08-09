@@ -5,7 +5,7 @@
     <a href="/bookinfo/{{ book.id }}">{{book.name}}</a>
     <form action="{% url 'book_delete' book.id %}" method="POST">
         {% csrf_token %}
-    <button type="submit" class="btn btn-secondary">Delete book</button>
+    <button type="submit" class="btn btn-primary btn-sm">Delete book</button>
     </form>
 
 {% endfor %}
