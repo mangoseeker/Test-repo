@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+    <h1>Name of this book</h1>
+<form action="{% url 'edit_book' book_id %}" method="POST">
+        {% csrf_token %}
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" value="{{ book.name }}" placeholder="" name="name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"></span>
+      </div>
+    </div>
+    <h1>Year of publishing</h1>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="" name="year" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"></span>
+      </div>
+    </div>
+    <h1>Author of this book</h1>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="" name="aftername" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2"></span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secondary">Edit</button>
+</form>
+{% endblock %}
+{% block header %}
+{% endblock %}
