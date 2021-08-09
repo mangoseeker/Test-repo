@@ -12,6 +12,8 @@ urlpatterns = [
     path("bookinfo/<int:Book_id>/", views.bookinfo, name="bookinfo"),
     path('delete/(?P<m>[0-9]+)/', views.book_delete, name='book_delete'),
     path('create/', views.create, name="create"),
-    path('savecreate', views.create_book, name="create_book")
+    path('savecreate/', views.create_book, name="create_book"),
+    path('save_edit/<int:book_id>/', views.save_edit, name="save_edit"),
+    path('edit/<int:book_id>/', views.edit_book, name="edit_book"),
 ]
 # r'^delete/(?P<pk>[0-9]+)/$'

@@ -53,3 +53,29 @@ def create_book(request):
     else:
         book = Book()
     return redirect('/books/')
+
+
+def edit_book(request, book_id):
+    if (request.method == "POST"):
+        book = Book.objects.get(id=book_id)
+
+        # author = Author.objects.get(id=book_id)
+        book.name = request.POST['name']
+        book.year = request.POST['year']
+        book.author = request.POST['author']
+        # author.name = request.POST['name']
+        print(book.name)
+        book.save()
+        # author.save()
+    author_id = book_id
+    context = {
+
+        "book":Book.objects.get(id=book_id),
+        "author":Author.objects.get(id=author_id)
+}
+    return render(request,'main/bookinfo.html',context)
+
+
+def save_edit(response, book_id):
+    book = Book.objects.get(id=book_id)
+    return render(response, 'main/edit.html', {"book_id":book_id, "book":book})
