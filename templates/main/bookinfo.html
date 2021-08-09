@@ -5,6 +5,10 @@
 
 {% block content %}
     <h1>{{ book.name }} </h1>
+    <h1>{{ book.year }}</h1>
+    <h1>{{ book.author }}</h1>
+    <a href="/save_edit/{{ book.id }}">Edit this book</a>
+
 {% endblock %}
 {% block header %}
 {% endblock %}
